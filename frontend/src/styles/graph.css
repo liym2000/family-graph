@@ -1,0 +1,159 @@
+.graph-view {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.graph-view.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  background: var(--bg);
+}
+
+.depth-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.depth-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.depth-controls .el-input-number {
+  width: 92px;
+}
+
+.graph-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(#f7fafb 1px, transparent 1px),
+    linear-gradient(90deg, #f7fafb 1px, transparent 1px), #fff;
+  background-size: 28px 28px;
+  box-shadow: none;
+  cursor: grab;
+  touch-action: none;
+}
+
+.graph-wrap.panning {
+  cursor: grabbing;
+}
+
+.family-svg {
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.edge {
+  fill: none;
+  stroke-width: 2;
+}
+
+.parent-edge {
+  stroke: var(--line-strong);
+}
+
+.spouse-edge {
+  stroke: var(--spouse);
+  stroke-dasharray: 6 5;
+}
+
+.edge.relation-path-edge {
+  stroke-width: 3.2;
+}
+
+.graph-node {
+  cursor: pointer;
+}
+
+.person-card {
+  fill: #fff;
+  stroke: var(--line);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 8px 13px rgba(31, 49, 72, 0.07));
+}
+
+.person-card.branch-framed {
+  stroke-width: 2.4;
+}
+
+.graph-node:hover .person-card {
+  stroke: var(--accent);
+}
+
+.graph-node.center .person-card {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.graph-node.center .person-card.branch-framed {
+  stroke-width: 2.8;
+}
+
+.person-card.relation-path-card {
+  fill: #fff7ed;
+  stroke-width: 2.7;
+}
+
+.person-card.relation-endpoint-card {
+  fill: #fff1f2;
+  stroke-width: 3.1;
+}
+
+.node-name {
+  fill: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.node-meta {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.spouse-badge rect {
+  fill: var(--spouse-soft);
+  stroke: #e5bf75;
+  stroke-width: 1.4;
+}
+
+.spouse-badge:hover rect {
+  stroke: var(--spouse);
+}
+
+.spouse-badge text {
+  fill: var(--spouse);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.graph-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+@media (max-width: 820px) {
+  .depth-controls {
+    justify-content: flex-start;
+  }
+}

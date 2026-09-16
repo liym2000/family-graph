@@ -1,0 +1,230 @@
+.el-button {
+  border-radius: var(--ui-button-radius, 999px) !important;
+}
+.el-button:not(.is-link):not(.is-text) {
+  min-height: 34px;
+  padding-inline: 16px;
+  font-weight: 500;
+}
+.el-button--primary:not(.is-plain) {
+  font-weight: 600;
+}
+.el-button.destructive-confirm {
+  --el-button-bg-color: var(--el-color-danger);
+  --el-button-border-color: var(--el-color-danger);
+  --el-button-hover-bg-color: var(--el-color-danger-light-3);
+  --el-button-hover-border-color: var(--el-color-danger-light-3);
+  --el-button-active-bg-color: var(--el-color-danger-dark-2);
+  --el-button-active-border-color: var(--el-color-danger-dark-2);
+}
+.el-message-box {
+  border-radius: var(--radius-dialog);
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+.el-message-box__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.el-overlay-message-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.el-overlay-message-box::after {
+  display: none;
+}
+.el-message-box__btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px 0 0;
+  order: 2;
+}
+.el-message-box {
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 32px);
+  margin: 0;
+  box-sizing: border-box;
+}
+.el-message-box__header {
+  order: 0;
+}
+.el-message-box__content {
+  order: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px 0 0;
+}
+.el-message-box__btns .el-button {
+  margin-left: 0;
+}
+
+.el-dialog {
+  width: 75vw !important;
+  height: 75vh;
+  margin: 12.5vh auto !important;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
+  --el-dialog-padding-primary: 24px;
+  --el-dialog-border-radius: var(--radius-dialog);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-dialog);
+  box-shadow: 0 20px 64px rgba(25, 55, 65, 0.18);
+}
+.el-dialog__header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  padding: 0 36px 20px 0;
+  margin: 0;
+}
+.el-dialog__title {
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.el-dialog__headerbtn {
+  top: 16px;
+  right: 16px;
+}
+.el-dialog__body {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 0;
+  color: var(--ink);
+}
+.el-dialog .el-form-item {
+  margin-bottom: 20px;
+}
+.el-dialog .el-form-item__label {
+  color: var(--muted);
+}
+.el-dialog .el-input__wrapper {
+  min-height: 38px;
+}
+.el-dialog .el-textarea__inner {
+  padding: 10px 12px;
+  line-height: 1.7;
+}
+.el-dialog__footer {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 0 16px;
+}
+.el-dialog__footer .el-button {
+  margin-left: 0;
+  min-height: 36px;
+  padding-inline: 18px;
+}
+@media (max-width: 600px) {
+  .el-dialog {
+    --el-dialog-padding-primary: 20px;
+    max-width: calc(100vw - 32px);
+  }
+}
+
+.el-input__wrapper,
+.el-textarea__inner {
+  border-radius: 12px !important;
+}
+
+/* Shared action placement: top right for cards, forms and dialogs. */
+.ui-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+.ui-actions .el-button + .el-button {
+  margin-left: 0;
+}
+.ui-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.surface .ui-card-header > h2 {
+  margin: 0;
+}
+.ui-card-header > strong {
+  flex-shrink: 0;
+}
+.ui-notes {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.form-actions.ui-actions {
+  justify-content: flex-end;
+  margin: 0 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--el-bg-color);
+  padding-bottom: 8px;
+}
+.el-dialog:has(.person-basics) .el-dialog__header {
+  min-height: 48px;
+  padding-right: 240px;
+}
+.el-dialog:has(.person-basics) .form-actions {
+  position: absolute;
+  top: 24px;
+  right: 64px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .el-dialog:has(.person-basics) .el-dialog__header {
+    padding-right: 36px;
+  }
+  .el-dialog:has(.person-basics) .form-actions {
+    position: sticky;
+    top: 0;
+    right: auto;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    background: var(--el-bg-color);
+  }
+}
+.form-grid .el-input-number {
+  width: 100%;
+}
+
+.el-popper.notes-tooltip {
+  max-width: min(480px, calc(100vw - 32px));
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+.notes-tooltip-content {
+  max-width: 100%;
+  max-height: min(360px, 60vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.65;
+}

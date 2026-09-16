@@ -1,0 +1,19 @@
+services:
+  app:
+    image: ymli/family-graph:1.1.0
+    restart: unless-stopped
+    ports:
+      - "12502:8080"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8080
+      DEMO_READ_ONLY: "false"
+      SQLITE_PATH: /app/data/sqlite/family-graph.sqlite
+    volumes:
+      - ./data/sqlite:/app/data/sqlite
+      - ./data/backups:/app/data/backups
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

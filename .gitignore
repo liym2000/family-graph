@@ -1,0 +1,45 @@
+# Dependencies
+**/node_modules/
+
+# Build and test output
+**/dist/
+**/coverage/
+**/__pycache__/
+frontend/test-results/
+backend/public/
+*.tsbuildinfo
+
+# Local environment
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Logs and runtime files
+*.log
+*.pid
+
+# Private genealogy data and generated migration output
+local-data/
+data/
+migration/output/
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.db-wal
+*.db-shm
+*.pdf
+*_by_PaddleOCR*.json
+
+# Editors and operating systems
+.idea/
+.vscode/
+.agents/
+.codex/
+.DS_Store
+Thumbs.db
