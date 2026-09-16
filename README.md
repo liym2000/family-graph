@@ -33,20 +33,11 @@ docker compose run --rm app npm run db:init
 docker compose up -d
 ```
 
-打开 `http://localhost:12502`；远程访问使用服务器 IP，并放行对应端口。数据库保存在当前目录的 `data/sqlite/`，备份保存在 `data/backups/`，镜像不包含家谱数据。
+访问 `http://服务器IP:12502`，数据保存在同目录的 `data/`。
 
-在 `docker-compose.yml` 中修改端口及读写模式：
+端口和 `DEMO_READ_ONLY` 在 `docker-compose.yml` 中设置：`false` 可编辑，`true` 只读。修改后执行 `docker compose up -d`。
 
-```yaml
-ports:
-  - "12502:8080"
-environment:
-  DEMO_READ_ONLY: "false" # false：可编辑；true：只读
-```
-
-修改后执行 `docker compose up -d` 生效。可先开启编辑，通过首页导入 JSON，再切为只读。
-
-**当前没有登录鉴权。** 可编辑实例应限制访问来源；公开演示使用独立数据并开启只读。更新镜像不需要重新初始化数据库。
+当前无登录鉴权，公开部署请开启只读。
 
 ## 本地开发
 
