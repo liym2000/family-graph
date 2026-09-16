@@ -48,8 +48,6 @@ environment:
 
 **当前没有登录鉴权。** 可编辑实例应限制访问来源；公开演示使用独立数据并开启只读。更新镜像不需要重新初始化数据库。
 
-更多操作见 [部署说明](docker/DEPLOYMENT.md)。
-
 ## 本地开发
 
 技术栈：Vue 3、TypeScript、Element Plus、NestJS、Node.js 内置 SQLite。需要 Node.js 24+。
