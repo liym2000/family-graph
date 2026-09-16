@@ -2,8 +2,6 @@
 
 一个用于整理人物、记录亲属关系和浏览家族树的家谱管理应用。
 
-支持中文与英文，使用 SQLite 保存数据，无需独立数据库服务。
-
 [在线演示](https://family-demo.jiujiumu.top) · [Docker Hub](https://hub.docker.com/r/ymli/family-graph)
 
 ## 主要功能
