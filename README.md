@@ -2,9 +2,7 @@
 
 一个用于整理人物、记录亲属关系和浏览家族树的家谱管理应用。
 
-[在线演示](https://family-demo.jiujiumu.top) · [Docker Hub](https://hub.docker.com/r/ymli/family-graph)
-
-[![LINUX DO](https://img.shields.io/badge/LINUX-DO-FFB003)](https://linux.do)
+[在线演示](https://family-demo.jiujiumu.top) · [Docker Hub](https://hub.docker.com/r/ymli/family-graph) · [![LINUX DO](https://img.shields.io/badge/LINUX-DO-FFB003)](https://linux.do)
 
 ## 主要功能
 
